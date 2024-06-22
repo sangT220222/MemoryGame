@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="app">
       <h1>Memory Card Game</h1>
-      <GameBoard count={10} />
+      <GameBoard number={10} />
     </div>
   );
 };
