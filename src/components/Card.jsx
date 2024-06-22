@@ -1,30 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-const Card = ({ image, id, onClick }) => {
-  const { wasClicked, setWasClicked } = useState(false);
+const Card = (props) => {
+  const [wasClicked, setWasClicked] = useState(false);
 
   const handleClick = () => {
-    if (!wasClicked) {
-      setWasClicked(true);
-      onClick(id);
+    setWasClicked(!wasClicked);
+
+    if (wasClicked) {
+      props.endStage();
+    } else {
+      props.incrementScore();
     }
+    props.randomiseCards();
   };
+
+  useEffect(() => {
+    if (props.reset) {
+      setWasClicked(false);
+    }
+  }, [props.reset]);
+
   return (
-    <div className="card" onClick={handleClick}>
-      <img src={image} alt="Pokemon" />
+    <div className="card" key={props.image} onClick={handleClick}>
+      <img src={props.image} alt="Pokemon" />
     </div>
   );
 };
 
 Card.propTypes = {
   image: PropTypes.string,
-  id: PropTypes.number,
-  onClick: PropTypes.func,
-  //   reset: PropTypes.bool,
-  //   endCurrentStage: PropTypes.func,
-  //   incrementScore: PropTypes.func,
-  //   randomizeCards: PropTypes.func,
+  reset: PropTypes.bool,
+  endStage: PropTypes.func,
+  incrementScore: PropTypes.func,
+  randomiseCards: PropTypes.func,
 };
 
 export default Card;
