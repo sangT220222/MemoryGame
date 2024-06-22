@@ -1,18 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+// import { useState } from "react";
+import GameBoard from "./gameBoard";
+// import "./App.css";
 
-const App() => {
-
-
+const App = () => {
   return (
-    <>
-      <div>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app">
+      <h1>Memory Card Game</h1>
+      <GameBoard count={10} />
+    </div>
+  );
+};
 
-export default App
+export default App;
