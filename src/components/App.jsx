@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import { useState } from "react";
-import GameBoard from "./components/gameBoard.jsx";
+import GameBoard from "./gameBoard.jsx";
 import "../styles/App.css";
 
 const App = () => {
