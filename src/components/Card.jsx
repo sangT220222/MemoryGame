@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import "../styles/Card.css";
 
 const Card = (props) => {
   const [wasClicked, setWasClicked] = useState(false);
@@ -8,11 +9,11 @@ const Card = (props) => {
     setWasClicked(!wasClicked);
 
     if (wasClicked) {
-      props.endStage();
+      props.endStage(); //endStage() is initialised in the App.jsx file - parent/main function
     } else {
-      props.incrementScore();
+      props.incrementScore(); //incrementScore is initialised in the App.jsx file - parent/main function
     }
-    props.randomiseCards();
+    props.randomiseCards(); //randomiseCards() is initialised in the App.jsx file - parent/main function
   };
 
   useEffect(() => {

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import GetPokemonImages from "./FetchAPI";
 import Card from "./Card";
 import PropTypes from "prop-types";
+import "../styles/gameBoard.css";
 
 const GameBoard = (props) => {
   const { images } = GetPokemonImages({ number: props.number }); // Destructure images from the result of GetPokemonImages

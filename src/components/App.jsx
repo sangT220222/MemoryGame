@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import { useState } from "react";
 import GameBoard from "./gameBoard";
-// import "./App.css";
+import "../styles/App.css";
 
 const App = () => {
   //want two function that will increment score or end the leve/stage
