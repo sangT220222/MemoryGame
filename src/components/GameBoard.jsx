@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import GetPokemonImages from "./FetchAPI";
-import Card from "./Card";
+import Card from "../components/Card.jsx";
 import PropTypes from "prop-types";
 import "../styles/gameBoard.css";
 
