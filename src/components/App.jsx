@@ -21,7 +21,7 @@ const App = () => {
   };
 
   const incrementScore = () => {
-    setScore(() => score + 1);
+    setScore(() => score + 1); //replicates the state object and increment the value in it
     setReset(false);
   };
 
