@@ -12,17 +12,15 @@ const getRandomNumbers = (count, min, max) => {
 
 const GetPokemonImages = ({ number }) => {
   const [images, setImages] = useState([]);
-  //   const [loading, setLoading] = useState(true);
-  //   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
     const getImages = async () => {
       //   try {
       const randomNumbers = getRandomNumbers(number, 1, 999);
       const pokemons = randomNumbers.map((num) => {
-        return fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
+        return fetch(`https://pokeapi.co/api/v2/pokemon/${num}`) //fetches different images from the api based on the random numbers provided
           .then((response) => response.json())
-          .then((data) => data.sprites.front_default);
+          .then((data) => data.sprites.front_default); //path to get the images from json result
       });
       const pokemonData = await Promise.all(pokemons);
       const images = pokemonData;
