@@ -20,14 +20,18 @@ const GameBoard = (props) => {
       setCards(initialCards);
     }
   }, [images]);
-
+  
+  // State to hold the order of cards
   const [positions, setPositions] = useState([]);
-
+  
+  // Effect to initialize cards when images are fetched
   useEffect(() => {
     // Initialize positions array with indices based on cards length
     setPositions(cards.map((value, index) => index));
   }, [cards]); // Update positions when cards change
 
+  
+  // Function to shuffle an array (Fisher-Yates algorithm)
   const shuffleArray = (array) => {
     let shuffledArray = array.slice(0);
     for (let i = 0; i < shuffledArray.length; i++) {
