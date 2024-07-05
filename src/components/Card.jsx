@@ -6,7 +6,7 @@ const Card = (props) => {
   const [wasClicked, setWasClicked] = useState(false);
 
   const handleClick = () => {
-    setWasClicked(!wasClicked);
+    setWasClicked(!wasClicked); //always opposite of each other
 
     if (wasClicked) {
       props.endStage(); //endStage() is initialised in the App.jsx file - parent/main function
@@ -18,7 +18,7 @@ const Card = (props) => {
 
   useEffect(() => {
     if (props.reset) {
-      setWasClicked(false);
+      setWasClicked(false); //setWasClicked inital value is false, wasClocked is true
     }
   }, [props.reset]);
 
